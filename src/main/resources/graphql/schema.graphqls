@@ -5,6 +5,17 @@ type Query{
     bookById(id: ID!): Book
 }
 
+type Mutation{
+    addBook(book: BookInput): Book
+}
+
+input BookInput{
+    title : String!
+    description : String
+    published: Boolean
+    authorId: ID!
+}
+
 type Author{
     id: ID!
     name: String!
@@ -16,5 +27,6 @@ type Book{
     id: ID!
     title: String!
     description: String
+    published: Boolean
     author: Author
 }
